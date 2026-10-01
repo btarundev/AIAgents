@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execution Monitor - AgentFlow</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">✦ AgentFlow</div>
+
+    <div class="title">
+        <h2>Execution Monitor</h2>
+        <p>Real-time AI agent monitoring</p>
+    </div>
+
+    <button class="refresh-button" onclick="refreshMonitor()">
+        ↻ Refresh
+    </button>
+
+    <a href="../index.html" class="back-button">
+        ← Back to Main
+    </a>
+
+</header>
+
+
+<main class="container">
+
+    <section class="welcome">
+        <div>
+            <h1>Execution Overview</h1>
+            <p>Monitor your AI agents and workflow executions.</p>
+        </div>
+
+        <div class="live">
+            <span></span> LIVE
+        </div>
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <div class="icon">⚡</div>
+            <p>Running</p>
+            <h2 id="running">12</h2>
+            <small>Currently executing</small>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">✓</div>
+            <p>Completed</p>
+            <h2>1,248</h2>
+            <small>Today</small>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">!</div>
+            <p>Failed</p>
+            <h2>18</h2>
+            <small>Today</small>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">◉</div>
+            <p>Success Rate</p>
+            <h2>98.5%</h2>
+            <small>Last 24 hours</small>
+        </div>
+
+    </section>
+
+
+    <!-- EXECUTIONS -->
+
+    <section class="panel">
+
+        <div class="panel-header">
+            <div>
+                <h2>Live Executions</h2>
+                <p>Recent agent activity</p>
+            </div>
+
+            <select>
+                <option>All Agents</option>
+                <option>Research Agent</option>
+                <option>Support Agent</option>
+                <option>Analytics Agent</option>
+            </select>
+        </div>
+
+
+        <div class="execution">
+
+            <div class="agent-icon">🔎</div>
+
+            <div class="agent-info">
+                <h3>Research Agent</h3>
+                <p>Searching academic papers</p>
+            </div>
+
+            <div class="progress-box">
+                <div class="progress">
+                    <div style="width: 78%;"></div>
+                </div>
+                <span>78%</span>
+            </div>
+
+            <div class="status running-status">
+                Running
+            </div>
+
+            <span class="time">2 min ago</span>
+
+        </div>
+
+
+        <div class="execution">
+
+            <div class="agent-icon">💬</div>
+
+            <div class="agent-info">
+                <h3>Support Agent</h3>
+                <p>Processing customer request</p>
+            </div>
+
+            <div class="progress-box">
+                <div class="progress">
+                    <div style="width: 54%;"></div>
+                </div>
+                <span>54%</span>
+            </div>
+
+            <div class="status running-status">
+                Running
+            </div>
+
+            <span class="time">4 min ago</span>
+
+        </div>
+
+
+        <div class="execution">
+
+            <div class="agent-icon">📊</div>
+
+            <div class="agent-info">
+                <h3>Analytics Agent</h3>
+                <p>Generating monthly report</p>
+            </div>
+
+            <div class="progress-box">
+                <div class="progress">
+                    <div style="width: 100%;"></div>
+                </div>
+                <span>100%</span>
+            </div>
+
+            <div class="status completed-status">
+                Completed
+            </div>
+
+            <span class="time">7 min ago</span>
+
+        </div>
+
+
+        <div class="execution">
+
+            <div class="agent-icon">✍️</div>
+
+            <div class="agent-info">
+                <h3>Content Agent</h3>
+                <p>Creating marketing content</p>
+            </div>
+
+            <div class="progress-box">
+                <div class="progress">
+                    <div style="width: 35%;"></div>
+                </div>
+                <span>35%</span>
+            </div>
+
+            <div class="status failed-status">
+                Failed
+            </div>
+
+            <span class="time">10 min ago</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACTIVITY -->
+
+    <section class="panel">
+
+        <div class="panel-header">
+            <div>
+                <h2>Execution Activity</h2>
+                <p>System events and logs</p>
+            </div>
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <span class="dot"></span>
+                <div>
+                    <strong>Research Agent started</strong>
+                    <p>Searching for AI research papers</p>
+                    <small>2 minutes ago</small>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <span class="dot"></span>
+                <div>
+                    <strong>Support Agent processing request</strong>
+                    <p>Customer query received</p>
+                    <small>4 minutes ago</small>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <span class="dot"></span>
+                <div>
+                    <strong>Analytics Agent completed</strong>
+                    <p>Monthly report generated</p>
+                    <small>7 minutes ago</small>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+</main>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
