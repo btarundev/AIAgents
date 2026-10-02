@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Builder - AgentFlow</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="logo">✦ AgentFlow</div>
+
+    <div class="page-title">
+        <span>AI Agent Builder</span>
+        <small>Create and configure intelligent agents</small>
+    </div>
+    
+    <a href="../index.html" class="back-button">
+        ← Back to Main
+    </a>
+</header>
+
+
+<main class="builder">
+
+    <!-- LEFT TOOLBOX -->
+    <aside class="toolbox">
+
+        <h2>Components</h2>
+        <p class="subtitle">Drag components into your agent</p>
+
+        <div class="component" onclick="selectComponent('AI Model')">
+            <span>🤖</span>
+            <div>
+                <strong>AI Model</strong>
+                <small>Language model</small>
+            </div>
+        </div>
+
+        <div class="component" onclick="selectComponent('Input')">
+            <span>⌨️</span>
+            <div>
+                <strong>Input</strong>
+                <small>User input</small>
+            </div>
+        </div>
+
+        <div class="component" onclick="selectComponent('Memory')">
+            <span>🧠</span>
+            <div>
+                <strong>Memory</strong>
+                <small>Conversation memory</small>
+            </div>
+        </div>
+
+        <div class="component" onclick="selectComponent('Search')">
+            <span>🔎</span>
+            <div>
+                <strong>Search</strong>
+                <small>Web search</small>
+            </div>
+        </div>
+
+        <div class="component" onclick="selectComponent('Action')">
+            <span>⚡</span>
+            <div>
+                <strong>Action</strong>
+                <small>Perform task</small>
+            </div>
+        </div>
+
+        <div class="component" onclick="selectComponent('Document')">
+            <span>📄</span>
+            <div>
+                <strong>Document</strong>
+                <small>Knowledge source</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- CENTER CANVAS -->
+    <section class="canvas">
+
+        <div class="canvas-header">
+            <div>
+                <h1>Agent Canvas</h1>
+                <p>Design your AI agent workflow</p>
+            </div>
+
+            <button class="run-button" onclick="runAgent()">
+                ▶ Run Agent
+            </button>
+        </div>
+
+
+        <div class="workflow">
+
+            <div class="node input-node">
+                <div class="node-icon">⌨️</div>
+
+                <div>
+                    <span>INPUT</span>
+                    <h3>User Input</h3>
+                    <p>Receives user message</p>
+                </div>
+            </div>
+
+
+            <div class="arrow">↓</div>
+
+
+            <div class="node ai-node">
+                <div class="node-icon">🤖</div>
+
+                <div>
+                    <span>AI MODEL</span>
+                    <h3>GPT Agent</h3>
+                    <p>Processes the request</p>
+                </div>
+            </div>
+
+
+            <div class="arrow">↓</div>
+
+
+            <div class="node memory-node">
+                <div class="node-icon">🧠</div>
+
+                <div>
+                    <span>MEMORY</span>
+                    <h3>Conversation Memory</h3>
+                    <p>Stores previous context</p>
+                </div>
+            </div>
+
+
+            <div class="arrow">↓</div>
+
+
+            <div class="node output-node">
+                <div class="node-icon">💬</div>
+
+                <div>
+                    <span>OUTPUT</span>
+                    <h3>Agent Response</h3>
+                    <p>Returns final response</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RIGHT SETTINGS -->
+    <aside class="settings">
+
+        <h2>Agent Settings</h2>
+
+        <label>Agent Name</label>
+        <input type="text" id="agentName" value="Research Assistant">
+
+
+        <label>AI Model</label>
+        <select>
+            <option>GPT-4</option>
+            <option>GPT-4o</option>
+            <option>Claude</option>
+            <option>Gemini</option>
+        </select>
+
+
+        <label>Temperature</label>
+
+        <div class="range-container">
+            <input type="range" min="0" max="100" value="40"
+                   id="temperature"
+                   oninput="updateTemperature()">
+
+            <span id="temperatureValue">0.4</span>
+        </div>
+
+
+        <label>System Instructions</label>
+
+        <textarea rows="7">You are a helpful AI research assistant. Provide accurate and clear information.</textarea>
+
+
+        <button class="save-button" onclick="saveAgent()">
+            Save Agent
+        </button>
+
+    </aside>
+
+</main>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

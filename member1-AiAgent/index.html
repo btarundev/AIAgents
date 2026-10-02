@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Agent Dashboard | AgentFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            ✦ AgentFlow
+        </div>
+
+        <nav>
+
+            <a href="#" class="active">
+                📊 Dashboard
+            </a>
+
+            <a href="#">
+                🤖 Agents
+            </a>
+
+            <a href="#">
+                ⚡ Tasks
+            </a>
+
+            <a href="#">
+                📈 Analytics
+            </a>
+
+            <a href="#">
+                ⚙ Settings
+            </a>
+
+        </nav>
+
+        <a href="../index.html" class="back-button">
+            ← Main Website
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+                <h1>AI Agent Dashboard</h1>
+                <p>Monitor your intelligent agents</p>
+            </div>
+
+            <button class="notification">
+                🔔
+            </button>
+
+        </header>
+
+
+        <!-- STAT CARDS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="icon purple">
+                    🤖
+                </div>
+
+                <div>
+                    <p>Active Agents</p>
+                    <h2 id="agentCount">12</h2>
+                </div>
+
+                <span class="up">+12%</span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="icon blue">
+                    ⚡
+                </div>
+
+                <div>
+                    <p>Tasks Completed</p>
+                    <h2>2,847</h2>
+                </div>
+
+                <span class="up">+18%</span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="icon green">
+                    ✓
+                </div>
+
+                <div>
+                    <p>Success Rate</p>
+                    <h2>98.7%</h2>
+                </div>
+
+                <span class="up">+2.4%</span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="icon orange">
+                    ⏱
+                </div>
+
+                <div>
+                    <p>Avg. Response</p>
+                    <h2>1.8s</h2>
+                </div>
+
+                <span class="down">-8%</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD CONTENT -->
+
+        <section class="dashboard-grid">
+
+            <!-- CHART -->
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Agent Activity</h3>
+                        <p>Tasks completed this week</p>
+                    </div>
+
+                    <select>
+                        <option>Last 7 Days</option>
+                        <option>Last 30 Days</option>
+                    </select>
+
+                </div>
+
+                <div class="chart">
+
+                    <div class="bar" style="height:45%">
+                        <span>Mon</span>
+                    </div>
+
+                    <div class="bar" style="height:70%">
+                        <span>Tue</span>
+                    </div>
+
+                    <div class="bar" style="height:55%">
+                        <span>Wed</span>
+                    </div>
+
+                    <div class="bar" style="height:85%">
+                        <span>Thu</span>
+                    </div>
+
+                    <div class="bar" style="height:65%">
+                        <span>Fri</span>
+                    </div>
+
+                    <div class="bar" style="height:92%">
+                        <span>Sat</span>
+                    </div>
+
+                    <div class="bar" style="height:78%">
+                        <span>Sun</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AGENTS -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h3>Active Agents</h3>
+
+                    <button class="view-btn">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div class="agent">
+
+                    <div class="agent-icon">🤖</div>
+
+                    <div class="agent-info">
+                        <strong>Research Agent</strong>
+                        <span>Researching documents</span>
+                    </div>
+
+                    <div class="status">
+                        Active
+                    </div>
+
+                </div>
+
+
+                <div class="agent">
+
+                    <div class="agent-icon">💬</div>
+
+                    <div class="agent-info">
+                        <strong>Support Agent</strong>
+                        <span>Handling conversations</span>
+                    </div>
+
+                    <div class="status">
+                        Active
+                    </div>
+
+                </div>
+
+
+                <div class="agent">
+
+                    <div class="agent-icon">📊</div>
+
+                    <div class="agent-info">
+                        <strong>Analytics Agent</strong>
+                        <span>Processing data</span>
+                    </div>
+
+                    <div class="status">
+                        Active
+                    </div>
+
+                </div>
+
+
+                <div class="agent">
+
+                    <div class="agent-icon">✍</div>
+
+                    <div class="agent-info">
+                        <strong>Content Agent</strong>
+                        <span>Generating content</span>
+                    </div>
+
+                    <div class="status idle">
+                        Idle
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT TASKS -->
+
+        <section class="panel tasks">
+
+            <div class="panel-header">
+
+                <div>
+                    <h3>Recent Tasks</h3>
+                    <p>Latest agent activity</p>
+                </div>
+
+                <button class="view-btn">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="task-row">
+
+                <span>Research Agent</span>
+
+                <span>Market Research</span>
+
+                <span class="completed">
+                    Completed
+                </span>
+
+                <span>2 min ago</span>
+
+            </div>
+
+
+            <div class="task-row">
+
+                <span>Support Agent</span>
+
+                <span>Customer Query</span>
+
+                <span class="completed">
+                    Completed
+                </span>
+
+                <span>8 min ago</span>
+
+            </div>
+
+
+            <div class="task-row">
+
+                <span>Analytics Agent</span>
+
+                <span>Sales Analysis</span>
+
+                <span class="running">
+                    Running
+                </span>
+
+                <span>12 min ago</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
