@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Builder - AgentFlow</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">✦ AgentFlow</div>
+
+    <div class="title">
+        <h2>Workflow Builder</h2>
+        <p>Automate tasks with AI workflows</p>
+    </div>
+
+    <button class="run-button" onclick="runWorkflow()">
+        ▶ Run Workflow
+    </button>
+
+    <a href="../index.html" class="back-button">
+        ← Back to Main
+    </a>
+
+</header>
+
+
+<main class="builder">
+
+    <!-- TOOLBOX -->
+
+    <aside class="toolbox">
+
+        <h2>Workflow Components</h2>
+        <p>Choose components for your workflow</p>
+
+
+        <div class="tool" onclick="selectTool('Trigger')">
+            <span>⚡</span>
+            <div>
+                <strong>Trigger</strong>
+                <small>Start workflow</small>
+            </div>
+        </div>
+
+
+        <div class="tool" onclick="selectTool('AI Agent')">
+            <span>🤖</span>
+            <div>
+                <strong>AI Agent</strong>
+                <small>Run AI agent</small>
+            </div>
+        </div>
+
+
+        <div class="tool" onclick="selectTool('Search')">
+            <span>🔎</span>
+            <div>
+                <strong>Search</strong>
+                <small>Find information</small>
+            </div>
+        </div>
+
+
+        <div class="tool" onclick="selectTool('Action')">
+            <span>⚙️</span>
+            <div>
+                <strong>Action</strong>
+                <small>Perform action</small>
+            </div>
+        </div>
+
+
+        <div class="tool" onclick="selectTool('Condition')">
+            <span>◇</span>
+            <div>
+                <strong>Condition</strong>
+                <small>Check condition</small>
+            </div>
+        </div>
+
+
+        <div class="tool" onclick="selectTool('Send Email')">
+            <span>✉️</span>
+            <div>
+                <strong>Send Email</strong>
+                <small>Send notification</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- CANVAS -->
+
+    <section class="canvas">
+
+        <div class="canvas-header">
+            <div>
+                <h1>Customer Support Workflow</h1>
+                <p>Automated customer request processing</p>
+            </div>
+
+            <span class="status">● Active</span>
+        </div>
+
+
+        <div class="workflow">
+
+            <!-- STEP 1 -->
+
+            <div class="workflow-node">
+
+                <div class="node-icon trigger">⚡</div>
+
+                <div class="node-content">
+                    <span>TRIGGER</span>
+                    <h3>New Message</h3>
+                    <p>When a customer sends a message</p>
+                </div>
+
+            </div>
+
+
+            <div class="connector">↓</div>
+
+
+            <!-- STEP 2 -->
+
+            <div class="workflow-node">
+
+                <div class="node-icon agent">🤖</div>
+
+                <div class="node-content">
+                    <span>AI AGENT</span>
+                    <h3>Support Agent</h3>
+                    <p>Analyze customer request</p>
+                </div>
+
+            </div>
+
+
+            <div class="connector">↓</div>
+
+
+            <!-- STEP 3 -->
+
+            <div class="condition">
+
+                <div class="condition-icon">◇</div>
+
+                <div>
+                    <span>CONDITION</span>
+                    <h3>Requires Human?</h3>
+                    <p>Check request complexity</p>
+                </div>
+
+            </div>
+
+
+            <div class="branches">
+
+                <div class="branch">
+
+                    <div class="branch-label yes">
+                        YES
+                    </div>
+
+                    <div class="workflow-node small-node">
+
+                        <div class="node-icon human">👤</div>
+
+                        <div class="node-content">
+                            <span>ACTION</span>
+                            <h3>Human Support</h3>
+                            <p>Transfer to support team</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="branch">
+
+                    <div class="branch-label no">
+                        NO
+                    </div>
+
+                    <div class="workflow-node small-node">
+
+                        <div class="node-icon response">💬</div>
+
+                        <div class="node-content">
+                            <span>ACTION</span>
+                            <h3>Send Response</h3>
+                            <p>Reply to customer</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DETAILS -->
+
+    <aside class="details">
+
+        <h2>Workflow Details</h2>
+
+        <label>Workflow Name</label>
+
+        <input type="text"
+               id="workflowName"
+               value="Customer Support Workflow">
+
+
+        <label>Description</label>
+
+        <textarea rows="5">Automatically process customer requests using an AI support agent.</textarea>
+
+
+        <label>Execution Mode</label>
+
+        <select>
+            <option>Automatic</option>
+            <option>Manual</option>
+        </select>
+
+
+        <label>Timeout</label>
+
+        <select>
+            <option>5 minutes</option>
+            <option>10 minutes</option>
+            <option>30 minutes</option>
+        </select>
+
+        <button class="save-button" onclick="saveWorkflow()">
+            Save Workflow
+        </button>
+
+    </aside>
+
+</main>
+
+
+<script src="./script.js"></script>
+
+</body>
+</html>
