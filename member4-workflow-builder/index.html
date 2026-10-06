@@ -18,7 +18,7 @@
         <p>Automate tasks with AI workflows</p>
     </div>
 
-    <button class="run-button" onclick="runWorkflow()">
+    <button type="button" class="run-button" onclick="runWorkflow()">
         ▶ Run Workflow
     </button>
 
@@ -39,58 +39,58 @@
         <p>Choose components for your workflow</p>
 
 
-        <div class="tool" onclick="selectTool('Trigger')">
+        <button type="button" class="tool" onclick="selectTool('Trigger')">
             <span>⚡</span>
             <div>
                 <strong>Trigger</strong>
                 <small>Start workflow</small>
             </div>
-        </div>
+        </button>
 
 
-        <div class="tool" onclick="selectTool('AI Agent')">
+        <button type="button" class="tool" onclick="selectTool('AI Agent')">
             <span>🤖</span>
             <div>
                 <strong>AI Agent</strong>
                 <small>Run AI agent</small>
             </div>
-        </div>
+        </button>
 
 
-        <div class="tool" onclick="selectTool('Search')">
+        <button type="button" class="tool" onclick="selectTool('Search')">
             <span>🔎</span>
             <div>
                 <strong>Search</strong>
                 <small>Find information</small>
             </div>
-        </div>
+        </button>
 
 
-        <div class="tool" onclick="selectTool('Action')">
+        <button type="button" class="tool" onclick="selectTool('Action')">
             <span>⚙️</span>
             <div>
                 <strong>Action</strong>
                 <small>Perform action</small>
             </div>
-        </div>
+        </button>
 
 
-        <div class="tool" onclick="selectTool('Condition')">
+        <button type="button" class="tool" onclick="selectTool('Condition')">
             <span>◇</span>
             <div>
                 <strong>Condition</strong>
                 <small>Check condition</small>
             </div>
-        </div>
+        </button>
 
 
-        <div class="tool" onclick="selectTool('Send Email')">
+        <button type="button" class="tool" onclick="selectTool('Send Email')">
             <span>✉️</span>
             <div>
                 <strong>Send Email</strong>
                 <small>Send notification</small>
             </div>
-        </div>
+        </button>
 
     </aside>
 
@@ -105,7 +105,7 @@
                 <p>Automated customer request processing</p>
             </div>
 
-            <span class="status">● Active</span>
+            <span class="status" id="workflowStatus" aria-live="polite">● Ready</span>
         </div>
 
 
@@ -218,35 +218,35 @@
 
         <h2>Workflow Details</h2>
 
-        <label>Workflow Name</label>
+        <label for="workflowName">Workflow Name</label>
 
         <input type="text"
                id="workflowName"
                value="Customer Support Workflow">
 
 
-        <label>Description</label>
+        <label for="workflowDescription">Description</label>
 
-        <textarea rows="5">Automatically process customer requests using an AI support agent.</textarea>
+        <textarea id="workflowDescription" rows="5">Automatically process customer requests using an AI support agent.</textarea>
 
 
-        <label>Execution Mode</label>
+        <label for="executionMode">Execution Mode</label>
 
-        <select>
+        <select id="executionMode">
             <option>Automatic</option>
             <option>Manual</option>
         </select>
 
 
-        <label>Timeout</label>
+        <label for="workflowTimeout">Timeout</label>
 
-        <select>
+        <select id="workflowTimeout">
             <option>5 minutes</option>
             <option>10 minutes</option>
             <option>30 minutes</option>
         </select>
 
-        <button class="save-button" onclick="saveWorkflow()">
+        <button type="button" class="save-button" onclick="saveWorkflow()">
             Save Workflow
         </button>
 
@@ -255,7 +255,7 @@
 </main>
 
 
-<script src="./script.js"></script>
+<script src="./main.js"></script>
 
 </body>
 </html>

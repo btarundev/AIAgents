@@ -319,3 +319,138 @@ body {
         flex-direction: column;
     }
 }
+
+:root {
+    --app-bg: #101815;
+    --app-surface: #18231f;
+    --app-raised: #202d27;
+    --app-line: #35473d;
+    --app-text: #f1f2e9;
+    --app-muted: #a2b0a6;
+    --app-accent: #d2f36b;
+    --app-coral: #ff8c74;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--app-bg);
+    background-image: linear-gradient(120deg, rgba(210, 243, 107, .025) 1px, transparent 1px);
+    background-size: 54px 54px;
+    color: var(--app-text);
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.topbar,
+.panel,
+.stat-card {
+    border-color: var(--app-line);
+    background: var(--app-surface);
+}
+
+.topbar {
+    background: #141d18;
+}
+
+.logo {
+    color: var(--app-accent);
+}
+
+.title p,
+.welcome p,
+.stat-card p,
+.panel-header p,
+.agent-info p,
+.time,
+.timeline-item p {
+    color: var(--app-muted);
+}
+
+.refresh-button,
+.back-button,
+.panel-header select {
+    border-color: var(--app-line);
+    background: var(--app-raised);
+    color: var(--app-text);
+}
+
+.refresh-button:hover,
+.back-button:hover {
+    border-color: var(--app-accent);
+}
+
+.live {
+    color: var(--app-accent);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.live span {
+    background: var(--app-accent);
+}
+
+#lastUpdated {
+    display: block;
+    margin: -18px 0 24px;
+    color: var(--app-muted);
+    font-size: 12px;
+}
+
+.execution {
+    border-color: #2b3a31;
+}
+
+.execution[hidden] {
+    display: none;
+}
+
+.agent-icon {
+    background: #2a3a30;
+}
+
+.progress,
+.panel-header select {
+    background-color: var(--app-raised);
+}
+
+.progress div {
+    background: var(--app-accent);
+}
+
+.running-status {
+    background: #35452a;
+    color: var(--app-accent);
+}
+
+.completed-status {
+    background: #243d2e;
+    color: #9bd58a;
+}
+
+.failed-status {
+    background: #492d2a;
+    color: var(--app-coral);
+}
+
+button,
+a,
+select {
+    font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--app-accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 15px 20px;
+    }
+
+    .panel-header {
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+}

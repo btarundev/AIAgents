@@ -18,7 +18,7 @@
         <p>Real-time AI agent monitoring</p>
     </div>
 
-    <button class="refresh-button" onclick="refreshMonitor()">
+    <button type="button" class="refresh-button" onclick="refreshMonitor()">
         ↻ Refresh
     </button>
 
@@ -38,8 +38,9 @@
         </div>
 
         <div class="live">
-            <span></span> LIVE
+            <span></span> DEMO DATA
         </div>
+        <small id="lastUpdated" aria-live="polite">Sample snapshot · ready</small>
     </section>
 
 
@@ -88,16 +89,17 @@
                 <p>Recent agent activity</p>
             </div>
 
-            <select>
-                <option>All Agents</option>
-                <option>Research Agent</option>
-                <option>Support Agent</option>
-                <option>Analytics Agent</option>
+            <select id="agentFilter" aria-label="Filter executions by agent">
+                <option value="all">All Agents</option>
+                <option value="Research Agent">Research Agent</option>
+                <option value="Support Agent">Support Agent</option>
+                <option value="Analytics Agent">Analytics Agent</option>
+                <option value="Content Agent">Content Agent</option>
             </select>
         </div>
 
 
-        <div class="execution">
+        <div class="execution" data-agent="Research Agent">
 
             <div class="agent-icon">🔎</div>
 
@@ -122,7 +124,7 @@
         </div>
 
 
-        <div class="execution">
+        <div class="execution" data-agent="Support Agent">
 
             <div class="agent-icon">💬</div>
 
@@ -147,7 +149,7 @@
         </div>
 
 
-        <div class="execution">
+        <div class="execution" data-agent="Analytics Agent">
 
             <div class="agent-icon">📊</div>
 
@@ -172,7 +174,7 @@
         </div>
 
 
-        <div class="execution">
+        <div class="execution" data-agent="Content Agent">
 
             <div class="agent-icon">✍️</div>
 
@@ -247,7 +249,7 @@
 
 </main>
 
-<script src="./script.js"></script>
+<script src="./main.js"></script>
 
 </body>
 </html>

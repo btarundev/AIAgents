@@ -31,53 +31,53 @@
         <h2>Components</h2>
         <p class="subtitle">Drag components into your agent</p>
 
-        <div class="component" onclick="selectComponent('AI Model')">
+        <button type="button" class="component" onclick="selectComponent('AI Model')">
             <span>🤖</span>
             <div>
                 <strong>AI Model</strong>
                 <small>Language model</small>
             </div>
-        </div>
+        </button>
 
-        <div class="component" onclick="selectComponent('Input')">
+        <button type="button" class="component" onclick="selectComponent('Input')">
             <span>⌨️</span>
             <div>
                 <strong>Input</strong>
                 <small>User input</small>
             </div>
-        </div>
+        </button>
 
-        <div class="component" onclick="selectComponent('Memory')">
+        <button type="button" class="component" onclick="selectComponent('Memory')">
             <span>🧠</span>
             <div>
                 <strong>Memory</strong>
                 <small>Conversation memory</small>
             </div>
-        </div>
+        </button>
 
-        <div class="component" onclick="selectComponent('Search')">
+        <button type="button" class="component" onclick="selectComponent('Search')">
             <span>🔎</span>
             <div>
                 <strong>Search</strong>
                 <small>Web search</small>
             </div>
-        </div>
+        </button>
 
-        <div class="component" onclick="selectComponent('Action')">
+        <button type="button" class="component" onclick="selectComponent('Action')">
             <span>⚡</span>
             <div>
                 <strong>Action</strong>
                 <small>Perform task</small>
             </div>
-        </div>
+        </button>
 
-        <div class="component" onclick="selectComponent('Document')">
+        <button type="button" class="component" onclick="selectComponent('Document')">
             <span>📄</span>
             <div>
                 <strong>Document</strong>
                 <small>Knowledge source</small>
             </div>
-        </div>
+        </button>
 
     </aside>
 
@@ -91,11 +91,12 @@
                 <p>Design your AI agent workflow</p>
             </div>
 
-            <button class="run-button" onclick="runAgent()">
+            <button type="button" class="run-button" onclick="runAgent()">
                 ▶ Run Agent
             </button>
         </div>
 
+        <p class="run-output" id="agentOutput" aria-live="polite">Ready to run a local demo.</p>
 
         <div class="workflow">
 
@@ -161,12 +162,12 @@
 
         <h2>Agent Settings</h2>
 
-        <label>Agent Name</label>
+        <label for="agentName">Agent Name</label>
         <input type="text" id="agentName" value="Research Assistant">
 
 
-        <label>AI Model</label>
-        <select>
+        <label for="agentModel">AI Model</label>
+        <select id="agentModel">
             <option>GPT-4</option>
             <option>GPT-4o</option>
             <option>Claude</option>
@@ -174,7 +175,7 @@
         </select>
 
 
-        <label>Temperature</label>
+        <label for="temperature">Temperature</label>
 
         <div class="range-container">
             <input type="range" min="0" max="100" value="40"
@@ -185,12 +186,15 @@
         </div>
 
 
-        <label>System Instructions</label>
+        <label for="systemInstructions">System Instructions</label>
 
-        <textarea rows="7">You are a helpful AI research assistant. Provide accurate and clear information.</textarea>
+        <textarea id="systemInstructions" rows="7">You are a helpful AI research assistant. Provide accurate and clear information.</textarea>
+
+        <label for="agentPrompt">Test prompt</label>
+        <textarea id="agentPrompt" rows="3" placeholder="Ask your agent something..."></textarea>
 
 
-        <button class="save-button" onclick="saveAgent()">
+        <button type="button" class="save-button" onclick="saveAgent()">
             Save Agent
         </button>
 

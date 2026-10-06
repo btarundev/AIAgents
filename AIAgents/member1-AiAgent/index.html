@@ -22,23 +22,23 @@
 
         <nav>
 
-            <a href="#" class="active">
+            <a href="#dashboard" class="active">
                 📊 Dashboard
             </a>
 
-            <a href="#">
+            <a href="#agents">
                 🤖 Agents
             </a>
 
-            <a href="#">
+            <a href="#tasks">
                 ⚡ Tasks
             </a>
 
-            <a href="#">
+            <a href="#analytics">
                 📈 Analytics
             </a>
 
-            <a href="#">
+            <a href="../member2-AIAgent-Builder/index.html">
                 ⚙ Settings
             </a>
 
@@ -53,7 +53,7 @@
 
     <!-- MAIN -->
 
-    <main class="main">
+    <main class="main" id="dashboard">
 
         <header class="topbar">
 
@@ -62,7 +62,7 @@
                 <p>Monitor your intelligent agents</p>
             </div>
 
-            <button class="notification">
+            <button type="button" class="notification" aria-label="Show notifications">
                 🔔
             </button>
 
@@ -145,18 +145,19 @@
 
             <!-- CHART -->
 
-            <div class="panel chart-panel">
+            <div class="panel chart-panel" id="analytics">
 
                 <div class="panel-header">
 
                     <div>
                         <h3>Agent Activity</h3>
-                        <p>Tasks completed this week</p>
+                        <p id="activityCaption">Tasks completed in the last 7 days</p>
                     </div>
 
-                    <select>
-                        <option>Last 7 Days</option>
-                        <option>Last 30 Days</option>
+                    <select id="activityPeriod" aria-label="Activity chart period">
+                        <option value="7">Last 7 Days</option>
+                        <option value="30">Last 30 Days</option>
+                        <option value="90">Last 90 Days</option>
                     </select>
 
                 </div>
@@ -198,15 +199,15 @@
 
             <!-- AGENTS -->
 
-            <div class="panel">
+            <div class="panel" id="agents">
 
                 <div class="panel-header">
 
                     <h3>Active Agents</h3>
 
-                    <button class="view-btn">
+                    <a class="view-btn" href="../member3-Execution-Monitor/index.html">
                         View All
-                    </button>
+                    </a>
 
                 </div>
 
@@ -281,7 +282,7 @@
 
         <!-- RECENT TASKS -->
 
-        <section class="panel tasks">
+        <section class="panel tasks" id="tasks">
 
             <div class="panel-header">
 
@@ -290,9 +291,9 @@
                     <p>Latest agent activity</p>
                 </div>
 
-                <button class="view-btn">
+                <a class="view-btn" href="../member3-Execution-Monitor/index.html">
                     View All
-                </button>
+                </a>
 
             </div>
 
@@ -346,7 +347,7 @@
     </main>
 
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>
